@@ -1,0 +1,41 @@
+# Include the default Flutter lint rules
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  strong-mode:
+    implicit-casts: false        # Disallow implicit type casts for better type safety
+    implicit-dynamic: false      # Disallow variables with implicit dynamic types
+
+linter:
+  rules:
+    # 📦 IMPORT RULES
+    always_use_package_imports: true       # Prefer `package:` imports instead of relative imports within lib/
+    avoid_relative_lib_imports: true       # Avoid using relative imports like `../lib/...`
+    depend_on_referenced_packages: true    # Ensure all referenced packages are in pubspec.yaml
+    directives_ordering: true              # Keep imports, exports, and parts in a consistent order
+    unnecessary_import: true               # Warn about unused imports
+
+    # 🧱 CODE STRUCTURE & STYLE
+    prefer_final_fields: true              # Use final for fields that are never reassigned
+    prefer_final_locals: true              # Use final for local variables that don’t change
+    prefer_const_constructors: true        # Prefer using const constructors when possible
+    prefer_const_literals_to_create_immutables: true  # Use const for list/map/set literals when possible
+    sort_child_properties_last: true       # Keep child property last in widget constructors
+    require_trailing_commas: true          # Encourage trailing commas for better diff readability
+    use_key_in_widget_constructors: true   # Require passing `Key` to widgets for better tree handling
+
+    # 🔒 SAFETY & CLARITY
+    always_specify_types: true             # Force specifying types for variables and function return values
+    avoid_dynamic_calls: true              # Prevent using dynamic variables with method calls
+    unnecessary_this: true                 # Avoid using `this.` when not required
+    avoid_returning_null: true             # Discourage returning null explicitly
+    avoid_empty_else: true                 # Avoid empty else blocks
+    no_duplicate_case_values: true         # Prevent duplicate values in switch cases
+    annotate_overrides: true               # Require @override annotation when overriding a method
+
+    # 🎯 PERFORMANCE & CLEAN CODE
+    avoid_unnecessary_containers: true     # Warn about Container widgets that are not needed
+    sized_box_for_whitespace: true         # Prefer SizedBox for spacing instead of using Containers
+    unnecessary_lambdas: true              # Avoid wrapping functions in lambdas when unnecessary
+    prefer_single_quotes: true             # Prefer single quotes for strings
+    avoid_print: true                      # Discourage using `print`, prefer logging instead
